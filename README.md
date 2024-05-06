@@ -16,6 +16,7 @@ View the front-end repository [here](https://github.com/Ariel-Schwartz-254/face-
 - NodeJS
 - ExpressJS
 - PostgreSQL
+- Docker
 - Knex.js - Library for connecting our server to the database
 - BcryptJS - Library for hashing passwords
 - Clarifai API - Computer vision API for facial recognition
