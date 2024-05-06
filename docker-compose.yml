@@ -1,0 +1,29 @@
+version: '2.26.1-desktop.1'
+
+services:
+
+  # Backend API
+  face-recognition-brain-api:
+    container_name: backend
+    build: ./
+    command: npm start
+    working_dir: /usr/src/face-recognition-brain-api
+    environment:
+      POSTGRES_URI: postgres://Ariel:secret@postgres:5432/smart-brain-docker
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/face-recognition-brain-api
+
+  # Postgres Database
+  postgres:
+    container_name: postgres
+    environment:
+      POSTGRES_USER: Ariel
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
+    
